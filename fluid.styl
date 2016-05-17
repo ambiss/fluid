@@ -1,0 +1,22 @@
+//flexible width Stylus
+
+/*** args -> 
+  *  targ== value; 
+  *  context==viwport layout or parent element; 
+  *  prop == css property; 
+  *  type == size unit [%, px, em, rem, vw, vh, height] 
+  */  
+  
+fluid(targ, context=1200, prop=width, type='%')
+    if type != rem and type != em 
+        calc = ((targ / context) * 100)
+        {prop} unit(calc, type) 
+    else 
+        calc = (targ / context)
+        {prop} unit(calc, type)
+    
+
+// use mixin sample
+fluid(169, 1900, width)
+fluid(119, 1200, padding-left, vw)
+fluid(20, 16, font-size, rem)
