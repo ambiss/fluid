@@ -1,0 +1,9 @@
+// flexible with SASS
+@mixin fluid($targ, $context: 1200, $prop: width, $type: %) {
+    @if $type != rem and $type != em {
+        #{$prop}: #{($targ / $context) * 100}#{$type};
+    }
+    @else {
+        #{$prop}: #{($targ / $context)}#{$type};
+    }
+}
