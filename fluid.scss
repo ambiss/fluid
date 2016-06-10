@@ -1,4 +1,10 @@
 // flexible with SASS
+/*** args -> 
+  *  targ== value; 
+  *  context==viwport layout or parent element; 
+  *  prop == css property; 
+  *  type == size unit [%, px, em, rem, vw, vh, vmax, hmax] 
+  */  
 @mixin fluid($targ, $context: 1200, $prop: width, $type: %) {
     @if $type != rem and $type != em {
         #{$prop}: #{($targ / $context) * 100}#{$type};
