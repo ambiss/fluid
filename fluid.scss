@@ -3,7 +3,7 @@
   *  targ== value; 
   *  context==viwport layout or parent element; 
   *  prop == css property; 
-  *  type == size unit [%, px, em, rem, vw, vh, vmax, hmax] 
+  *  type == size unit [%, em, rem, vw, vh, vmax, hmax] 
   */  
 @mixin fluid($targ, $context: 1200, $prop: width, $type: %) {
     @if $type != rem and $type != em {
